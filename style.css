@@ -35,6 +35,9 @@ body {
     border: solid rgb(221, 221, 221) 0.2rem;
     margin: 1rem;
     border-radius: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #answer_section {
@@ -63,6 +66,9 @@ body {
     border: solid rgb(221, 221, 221) 0.2rem;
     margin: 1rem;
     border-radius: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*grid-area: row-start / column-start / row-end / column-end; */
