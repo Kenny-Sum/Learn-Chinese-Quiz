@@ -14,28 +14,31 @@ html {
 }
 
 body {
+    background-color: rgb(184, 184, 184);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #layout {
+    background-color: rgb(255, 255, 255);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     height: 44rem;
     width: 64rem;
-    border: solid black 1px;
+    border-radius: 0.8rem;
 }
 
 #question_section {
     grid-area: 1 / 1 / 4 / 3;
-    border: solid black 1px;
+    border: solid rgb(221, 221, 221) 0.2rem;
+    margin: 1rem;
+    border-radius: 0.8rem;
 }
 
 #answer_section {
     grid-area: 1 / 3 / 4 / 6;
-    border: solid black 1px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -45,12 +48,14 @@ body {
 
 .answer {
     border-radius: 1.5rem;
-    border: solid black 1px;
+    border: solid rgb(221, 221, 221) 0.2rem;
 }
 
 #next_section {
     grid-area: 4 / 1 / 6 / 6;
-    border: solid black 1px;
+    border: solid rgb(221, 221, 221) 0.2rem;
+    margin: 1rem;
+    border-radius: 0.8rem;
 }
 
 /*grid-area: row-start / column-start / row-end / column-end; */
