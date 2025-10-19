@@ -1,21 +1,16 @@
-const questions = [
-    {
-        question: "what is the name of your first pet?",
-        answer: [
-            {text: "loki", correct: false},
-            {text: "cloud" , correct: false},
-            {text: "evie", correct: true},
-            {text: "jackie", correct: false}
-        ]
-    },
-    {
-        question: "How many pets do you have?",
-        answer: [
-            {text: "one", correct: true},
-            {text: "two" , correct: false},
-            {text: "three", correct: false},
-            {text: "four", correct: false}
-        ]
-    }
-]
 
+
+const element = document.getElementById("question_section");
+element.textContent = "Is the earth round, flat, square or rectangle?";
+
+const elementAnswerOne = document.getElementById("answerOne");
+elementAnswerOne.textContent = "round";
+
+const elementAnswerTwo = document.getElementById("answerTwo");
+elementAnswerTwo.textContent = "flat";
+
+const elementAnswerThree = document.getElementById("answerThree");
+elementAnswerThree.textContent = "square";
+
+const elementAnswerFour = document.getElementById("answerFour");
+elementAnswerFour.textContent = "rectangle";
