@@ -47,8 +47,15 @@ body {
 }
 
 .answer {
+    cursor: pointer;
     border-radius: 1.5rem;
     border: solid rgb(221, 221, 221) 0.2rem;
+}
+
+.answer:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    background-color: rgb(190, 255, 251);
 }
 
 #next_section {
