@@ -49,13 +49,13 @@ body {
     margin: 1rem;
 }
 
-.answer {
+#answer_section button {
     cursor: pointer;
     border-radius: 1.5rem;
     border: solid rgb(221, 221, 221) 0.2rem;
 }
 
-.answer:hover {
+#answer_section button:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
     background-color: rgb(190, 255, 251);

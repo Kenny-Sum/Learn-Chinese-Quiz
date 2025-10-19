@@ -1,5 +1,3 @@
-
-
 const element = document.getElementById("question_section");
 element.textContent = "Is the earth round, flat, square or rectangle?";
 
@@ -14,3 +12,4 @@ elementAnswerThree.textContent = "square";
 
 const elementAnswerFour = document.getElementById("answerFour");
 elementAnswerFour.textContent = "rectangle";
+
