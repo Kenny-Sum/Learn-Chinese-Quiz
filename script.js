@@ -8,6 +8,16 @@ const questionOne = {
     ]
 };
 
+const questionTwo = {
+    question : "What is the colour blue?",
+    answer : [
+        { text: "green", correct: false},
+        { text: "yellow", correct: false},
+        { text: "red", correct:false},
+        { text: "blue", correct:true}
+    ]
+};
+
 const element = document.getElementById("question_section");
 element.textContent = questionOne.question;
 
