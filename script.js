@@ -25,25 +25,33 @@ elementAnswerFour.textContent = questionOne.answer[3].text;
 
 
 elementAnswerOne.addEventListener('click', function() {
-    alert("correct");
     const answer = document.getElementById("next_section");
-    answer.textContent = "correct"
+    if (questionOne.answer[0].correct === true) {
+        alert("true")
+        answer.textContent = "true"
+    }
 });
 
 elementAnswerTwo.addEventListener('click', function() {
-    alert("wrong");
     const answer = document.getElementById("next_section");
-    answer.textContent = "wrong"
+    if (questionOne.answer[1].correct === false) {
+        alert("false")
+        answer.textContent = "false"
+    }
 });
 
 elementAnswerThree.addEventListener('click', function() {
-    alert("wrong");
     const answer = document.getElementById("next_section");
-    answer.textContent = "wrong"
+    if (questionOne.answer[2].correct === false) {
+        alert("false")
+        answer.textContent = "false"
+    }
 });
 
 elementAnswerFour.addEventListener('click', function() {
-    alert("wrong");
-    const nextSection = document.getElementById("next_section");
-    nextSection.textContent = "wrong"
+    const answer = document.getElementById("next_section");
+    if (questionOne.answer[3].correct === false) {
+        alert("false")
+        answer.textContent = "false"
+    }
 });
