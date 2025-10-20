@@ -13,3 +13,27 @@ elementAnswerThree.textContent = "square";
 const elementAnswerFour = document.getElementById("answerFour");
 elementAnswerFour.textContent = "rectangle";
 
+
+elementAnswerOne.addEventListener('click', function() {
+    alert("correct");
+    const answer = document.getElementById("next_section");
+    answer.textContent = "correct"
+});
+
+elementAnswerTwo.addEventListener('click', function() {
+    alert("wrong");
+    const answer = document.getElementById("next_section");
+    answer.textContent = "wrong"
+});
+
+elementAnswerThree.addEventListener('click', function() {
+    alert("wrong");
+    const answer = document.getElementById("next_section");
+    answer.textContent = "wrong"
+});
+
+elementAnswerFour.addEventListener('click', function() {
+    alert("wrong");
+    const answer = document.getElementById("next_section");
+    answer.textContent = "wrong"
+});
