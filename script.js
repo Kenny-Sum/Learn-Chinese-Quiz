@@ -18,6 +18,8 @@ const questionTwo = {
     ]
 };
 
+questionList = [questionOne, questionTwo];
+
 const element = document.getElementById("question_section");
 element.textContent = questionOne.question;
 
