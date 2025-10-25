@@ -21,24 +21,24 @@ const questionTwo = {
 questionList = [questionOne, questionTwo];
 
 const element = document.getElementById("question_section");
-element.textContent = questionOne.question;
+element.textContent = questionList[0].question;
 
 const elementAnswerOne = document.getElementById("answerOne");
-elementAnswerOne.textContent = questionOne.answer[0].text;
+elementAnswerOne.textContent = questionList[0].answer[0].text;
 
 const elementAnswerTwo = document.getElementById("answerTwo");
-elementAnswerTwo.textContent = questionOne.answer[1].text;
+elementAnswerTwo.textContent = questionList[0].answer[1].text;
 
 const elementAnswerThree = document.getElementById("answerThree");
-elementAnswerThree.textContent = questionOne.answer[2].text;
+elementAnswerThree.textContent = questionList[0].answer[2].text;
 
 const elementAnswerFour = document.getElementById("answerFour");
-elementAnswerFour.textContent = questionOne.answer[3].text;
+elementAnswerFour.textContent = questionList[0].answer[3].text;
 
 
 elementAnswerOne.addEventListener('click', function() {
     const answer = document.getElementById("next_section");
-    if (questionOne.answer[0].correct === true) {
+    if (questionList[0].answer[0].correct === true) {
         alert("true")
         answer.textContent = "true"
     }
@@ -46,7 +46,7 @@ elementAnswerOne.addEventListener('click', function() {
 
 elementAnswerTwo.addEventListener('click', function() {
     const answer = document.getElementById("next_section");
-    if (questionOne.answer[1].correct === false) {
+    if (questionList[0].answer[1].correct === false) {
         alert("false")
         answer.textContent = "false"
     }
@@ -54,7 +54,7 @@ elementAnswerTwo.addEventListener('click', function() {
 
 elementAnswerThree.addEventListener('click', function() {
     const answer = document.getElementById("next_section");
-    if (questionOne.answer[2].correct === false) {
+    if (questionList[0].answer[2].correct === false) {
         alert("false")
         answer.textContent = "false"
     }
@@ -62,8 +62,9 @@ elementAnswerThree.addEventListener('click', function() {
 
 elementAnswerFour.addEventListener('click', function() {
     const answer = document.getElementById("next_section");
-    if (questionOne.answer[3].correct === false) {
+    if (questionList[0].answer[3].correct === false) {
         alert("false")
         answer.textContent = "false"
     }
 });
+
