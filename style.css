@@ -61,14 +61,24 @@ body {
     background-color: rgb(190, 255, 251);
 }
 
-#next_section {
+#bottom_section {
     grid-area: 4 / 1 / 6 / 6;
     border: solid rgb(221, 221, 221) 0.2rem;
     margin: 1rem;
     border-radius: 0.8rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+}
+
+#nextBtn {
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 0.5rem;
+}
+
+#nextBtn:hover {
+    transform: scale(1.05);
+    background-color: rgb(190, 255, 251);
 }
 
 /*grid-area: row-start / column-start / row-end / column-end; */

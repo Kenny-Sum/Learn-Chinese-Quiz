@@ -1,70 +1,15 @@
-const questionOne = {
-    question : "Is the earth round, flat, square or rectangle?",
-    answer : [
-        { text: "round", correct: true},
-        { text: "flat", correct: false},
-        { text: "square", correct:false},
-        { text: "rectangle", correct:false}
-    ]
-};
+// Create a buttom element.
+const buttom_element = document.getElementById("bottom_section");
 
-const questionTwo = {
-    question : "What is the colour blue?",
-    answer : [
-        { text: "green", correct: false},
-        { text: "yellow", correct: false},
-        { text: "red", correct:false},
-        { text: "blue", correct:true}
-    ]
-};
+// Create a new <button> element.
+const  button = document.createElement("button");
 
-questionList = [questionOne, questionTwo];
+// Make the button read 'Next'.
+button.textContent = "Next";
 
-const element = document.getElementById("question_section");
-element.textContent = questionList[0].question;
+// Set the button id to nextBtn.
+button.id = "nextBtn";
 
-const elementAnswerOne = document.getElementById("answerOne");
-elementAnswerOne.textContent = questionList[0].answer[0].text;
-
-const elementAnswerTwo = document.getElementById("answerTwo");
-elementAnswerTwo.textContent = questionList[0].answer[1].text;
-
-const elementAnswerThree = document.getElementById("answerThree");
-elementAnswerThree.textContent = questionList[0].answer[2].text;
-
-const elementAnswerFour = document.getElementById("answerFour");
-elementAnswerFour.textContent = questionList[0].answer[3].text;
-
-
-elementAnswerOne.addEventListener('click', function() {
-    const answer = document.getElementById("next_section");
-    if (questionList[0].answer[0].correct === true) {
-        alert("true")
-        answer.textContent = "true"
-    }
-});
-
-elementAnswerTwo.addEventListener('click', function() {
-    const answer = document.getElementById("next_section");
-    if (questionList[0].answer[1].correct === false) {
-        alert("false")
-        answer.textContent = "false"
-    }
-});
-
-elementAnswerThree.addEventListener('click', function() {
-    const answer = document.getElementById("next_section");
-    if (questionList[0].answer[2].correct === false) {
-        alert("false")
-        answer.textContent = "false"
-    }
-});
-
-elementAnswerFour.addEventListener('click', function() {
-    const answer = document.getElementById("next_section");
-    if (questionList[0].answer[3].correct === false) {
-        alert("false")
-        answer.textContent = "false"
-    }
-});
+// Append btn to the container button_section.
+document.getElementById("bottom_section").appendChild(button);
 
