@@ -5,15 +5,22 @@ const questionOne = {
     answer : "4" // This represents which  is the answer, the key is the name 'answer' and the value is the actual answer.
 };
 
-// questionTwi Dictionary contains the question, answers and which answer is correct,  which has been listed as a key-value pair for each.
+// questionTwo Dictionary contains the question, answers and which answer is correct,  which has been listed as a key-value pair for each.
 const questionTwo = {
     question : "When you mix colour yellow and blue, what do you get? ", // This key value pair represents the question.
     options : ["pink", "black", "green", "white"], // This key value pair represents the options and list of answers. 
     answer : "green" // This represents which index is the answer for the list of answers.
 };
 
+// questionThree Dictionary contains the question, answers and which answer is correct,  which has been listed as a key-value pair for each.
+const questionThree = {
+    question : "你是哪__人? ", // This key value pair represents the question.
+    options : ["你", "国", "green", "white"], // This key value pair represents the options and list of answers. 
+    answer : "国" // This represents which index is the answer for the list of answers.
+};
+
 // List containing list of questions. 
-const questionList = [questionOne, questionTwo];
+const questionList = [questionOne, questionTwo, questionThree];
 
 // Create a buttom element linking to bottom section ID.
 const buttom_element = document.getElementById("bottom_section");
@@ -52,13 +59,9 @@ function createBtn() {
 // selects all elements that matches the css selector 'answer'.
 const answers = document.querySelectorAll(".answer");
 
-// Selects all element that contains the class name 'answer'.
-answers.forEach((answer) => {
-    answer.addEventListener("click", createBtn); // adds a create btn element.
-});
-
+// This function starts the quiz. 
 function startQuiz() {
-    let questionNum = 0;
+    let questionNum = 2; // Sets the question number to 0. 
 
     question_element.innerHTML = ""; // removes all html element within question_section container.
     const questionHeading = document.createElement("h3"); // create a new <h3> element.
@@ -70,8 +73,20 @@ function startQuiz() {
     answerThree_element.textContent = questionList[questionNum].options[2]; // Set the answer Three container text to the third answer.
     answerFour_element.textContent = questionList[questionNum].options[3]; // Set the answer Four container text to the fourth answer.
 
+    /* Place new code here. */
+    /* This loops through each button and adds an eventlistener (click). If button has correct answer it is coloured green if not then red. */
+    answers.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const selectedAnswer = btn.textContent;
+            const correctAnswer = questionList[questionNum].answer;
+
+            if (selectedAnswer === correctAnswer){
+                btn.style.backgroundColor = 'green';
+            } else {
+                btn.style.backgroundColor = 'red';
+            }
+        })
+    });
 }
 
 startQuiz();
-
-console.log(questionList[0].question);
