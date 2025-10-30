@@ -126,14 +126,7 @@ function changeQuestion(){
     buttom_element.textContent = "Find the right Answer.";
 };
 
-
-// This function starts the quiz. 
-function startQuiz() { 
-
-    // Changes the context of question and answers. 
-    changeQuestion();
-    
-
+function colourAnswerBtn(){
     /* This loops through each button and adds an eventlistener (click). If button has correct answer it is coloured green if not then red. It also creates a next button. */
     answers.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -163,7 +156,16 @@ function startQuiz() {
             createBtn();
         });
     });
+};
 
+
+// This function starts the quiz. 
+function startQuiz() { 
+
+    // Changes the context of question and answers. 
+    changeQuestion();
+    
+    colourAnswerBtn();
 
 
 }
