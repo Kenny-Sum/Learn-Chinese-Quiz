@@ -132,7 +132,6 @@ function startQuiz() {
     answers.forEach(btn => {
         btn.addEventListener("click", () => {
 
-            createBtn();
             // section can be condensed into a function.
             const selectedAnswer = btn.textContent;
             const correctAnswer = questionList[questionNum].answer;
