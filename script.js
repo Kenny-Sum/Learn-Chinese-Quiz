@@ -111,10 +111,8 @@ function createBtn() {
     });
 }
 
-
-// This function starts the quiz. 
-function startQuiz() { 
-
+function changeQuestion(){
+    // Changes the context of question and answers. 
     question_element.innerHTML = ""; // removes all html element within question_section container.
     const questionHeading = document.createElement("h3"); // create a new <h3> element.
     question_element.appendChild(questionHeading); // appends the heading to the question_element container. 
@@ -126,6 +124,14 @@ function startQuiz() {
     answerFour_element.textContent = questionList[questionNum].options[3]; // Set the answer Four container text to the fourth answer.
 
     buttom_element.textContent = "Find the right Answer.";
+};
+
+
+// This function starts the quiz. 
+function startQuiz() { 
+
+    // Changes the context of question and answers. 
+    changeQuestion();
     
 
     /* This loops through each button and adds an eventlistener (click). If button has correct answer it is coloured green if not then red. It also creates a next button. */
