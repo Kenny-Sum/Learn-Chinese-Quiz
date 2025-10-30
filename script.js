@@ -82,6 +82,8 @@ function startQuiz() {
     answerTwo_element.textContent = questionList[questionNum].options[1]; // Set the answer Two container text to the second answer.
     answerThree_element.textContent = questionList[questionNum].options[2]; // Set the answer Three container text to the third answer.
     answerFour_element.textContent = questionList[questionNum].options[3]; // Set the answer Four container text to the fourth answer.
+
+    buttom_element.textContent = "Find the right Answer.";
     
 
     /* This loops through each button and adds an eventlistener (click). If button has correct answer it is coloured green if not then red. It also creates a next button. */
