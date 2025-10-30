@@ -144,9 +144,6 @@ function startQuiz() {
                 const heading = document.createElement("h3"); // Create a new <h3> element
                 heading.textContent = "Correct!"; // Writes the new heading with text.
                 buttom_element.appendChild(heading); // appends the heading to the bottom_element container.
-
-                createBtn();
-                
             } else {
                 btn.style.backgroundColor = 'red';
 
@@ -155,10 +152,9 @@ function startQuiz() {
                 const heading = document.createElement("h3"); // Create a new <h3> element
                 heading.textContent = "Wrong!"; // Writes the new heading with text.
                 buttom_element.appendChild(heading); // appends the heading to the bottom_element container.
-
-                createBtn();
             };
-            // condense.
+
+            createBtn();
         });
     });
 
