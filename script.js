@@ -40,28 +40,38 @@ const answerThree_element = document.getElementById("answerThree");
 // Create answerFour element linking to answerOne ID.
 const answerFour_element = document.getElementById("answerFour");
 
+// selects all elements that matches the css selector 'answer'.
+const answers = document.querySelectorAll(".answer");
+
+let questionNum = 0; // Sets the question number to 0. 
 
 // Create button function.
 function createBtn() {
-    // Creates a heading showing if the answer is right or wrong.
-    buttom_element.innerHTML = ""; // removes all html elements within container.
-    const heading = document.createElement("h3"); // Create a new <h3> element
-    heading.textContent = "Correct or Wrong"; // Writes the new heading with text.
-    buttom_element.appendChild(heading); // appends the heading to the bottom_element container. 
 
     // Creates a button that has the inner text 'Next'.
     const  button = document.createElement("button"); // Create a new <button> element.
     button.textContent = "Next"; // Make the button read 'Next'.
     button.id = "nextBtn";// Set the button id to nextBtn.
     buttom_element.appendChild(button); // Append btn to the container button_section.
+
+    const nextBtn_element = document.getElementById("nextBtn");
+
+    nextBtn_element.addEventListener("click", () => {
+
+        questionNum ++; // next question. 
+
+        // removes colour from all btns.
+        answers.forEach(btn => {
+            btn.style.backgroundColor = 'white';
+        });
+
+        startQuiz();
+    });
 }
 
-// selects all elements that matches the css selector 'answer'.
-const answers = document.querySelectorAll(".answer");
 
 // This function starts the quiz. 
-function startQuiz() {
-    let questionNum = 2; // Sets the question number to 0. 
+function startQuiz() { 
 
     question_element.innerHTML = ""; // removes all html element within question_section container.
     const questionHeading = document.createElement("h3"); // create a new <h3> element.
@@ -72,21 +82,45 @@ function startQuiz() {
     answerTwo_element.textContent = questionList[questionNum].options[1]; // Set the answer Two container text to the second answer.
     answerThree_element.textContent = questionList[questionNum].options[2]; // Set the answer Three container text to the third answer.
     answerFour_element.textContent = questionList[questionNum].options[3]; // Set the answer Four container text to the fourth answer.
+    
 
-    /* Place new code here. */
-    /* This loops through each button and adds an eventlistener (click). If button has correct answer it is coloured green if not then red. */
+    /* This loops through each button and adds an eventlistener (click). If button has correct answer it is coloured green if not then red. It also creates a next button. */
     answers.forEach(btn => {
         btn.addEventListener("click", () => {
+
+            createBtn();
+            // section can be condensed into a function.
             const selectedAnswer = btn.textContent;
             const correctAnswer = questionList[questionNum].answer;
 
             if (selectedAnswer === correctAnswer){
                 btn.style.backgroundColor = 'green';
+
+                // Creates a heading showing if the answer is right.
+                buttom_element.innerHTML = ""; // removes all html elements within container.
+                const heading = document.createElement("h3"); // Create a new <h3> element
+                heading.textContent = "Correct!"; // Writes the new heading with text.
+                buttom_element.appendChild(heading); // appends the heading to the bottom_element container.
+
+                createBtn();
+                
             } else {
                 btn.style.backgroundColor = 'red';
-            }
-        })
+
+                // Creates a heading showing if the answer is wrong.
+                buttom_element.innerHTML = ""; // removes all html elements within container.
+                const heading = document.createElement("h3"); // Create a new <h3> element
+                heading.textContent = "Wrong!"; // Writes the new heading with text.
+                buttom_element.appendChild(heading); // appends the heading to the bottom_element container.
+
+                createBtn();
+            };
+            // condense.
+        });
     });
+
+
+
 }
 
 startQuiz();
