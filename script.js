@@ -64,6 +64,8 @@ const questionNine = {
 // List containing list of questions. 
 const questionList = [questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven, questionEight, questionNine];
 
+const layout_element = document.getElementById("layout");
+
 // Create a buttom element linking to bottom section ID.
 const buttom_element = document.getElementById("bottom_section");
 
@@ -101,6 +103,16 @@ function createBtn() {
     nextBtn_element.addEventListener("click", () => {
 
         questionNum ++; // next question. 
+
+        if (questionNum >= (questionList.length)) {
+            layout_element.innerHTML = ""; // cleans the whole page.
+            const heading = document.createElement("h1");
+            heading.textContent = "Congrats! you have finished the Quiz!";
+            heading.style.textAlign = "center";
+            layout_element.appendChild(heading);
+            heading.style.textAlign = "center";
+            heading.style.color = "blue";
+        };
 
         // removes colour from all btns.
         answers.forEach(btn => {
@@ -149,7 +161,7 @@ function colourAnswerBtn(){
                 // Creates a heading showing if the answer is wrong.
                 buttom_element.innerHTML = ""; // removes all html elements within container.
                 const heading = document.createElement("h3"); // Create a new <h3> element
-                heading.textContent = "Wrong!"; // Writes the new heading with text.
+                heading.textContent = "Wrong! The right answer is : " + correctAnswer; // Writes the new heading with text.
                 buttom_element.appendChild(heading); // appends the heading to the bottom_element container.
             };
 
@@ -167,7 +179,6 @@ function startQuiz() {
     
     colourAnswerBtn();
 
-
-}
+};
 
 startQuiz();
