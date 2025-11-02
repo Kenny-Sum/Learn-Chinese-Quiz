@@ -149,7 +149,7 @@ function colourAnswerBtn(){
 
             if (selectedAnswer === correctAnswer){
                 btn.style.backgroundColor = 'green';
-
+                btn.style.color = 'white'; // Color the text white.
                 // Creates a heading showing if the answer is right.
                 buttom_element.innerHTML = ""; // removes all html elements within container.
                 const heading = document.createElement("h3"); // Create a new <h3> element
@@ -157,14 +157,14 @@ function colourAnswerBtn(){
                 buttom_element.appendChild(heading); // appends the heading to the bottom_element container.
             } else {
                 btn.style.backgroundColor = 'red';
-
+                btn.style.color = 'white'; // Color the text white.
                 // Creates a heading showing if the answer is wrong.
                 buttom_element.innerHTML = ""; // removes all html elements within container.
                 const heading = document.createElement("h3"); // Create a new <h3> element
                 heading.textContent = "Wrong! The right answer is : " + correctAnswer; // Writes the new heading with text.
                 buttom_element.appendChild(heading); // appends the heading to the bottom_element container.
             };
-
+            btn.style.color = 'black';
             createBtn();
         });
     });

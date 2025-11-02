@@ -53,6 +53,7 @@ body {
     cursor: pointer;
     border-radius: 1.5rem;
     border: solid rgb(221, 221, 221) 0.2rem;
+    font-size: 2rem;
 }
 
 #answer_section button:hover {
