@@ -138,6 +138,20 @@ function changeQuestion(){
     buttom_element.textContent = "Find the right Answer.";
 };
 
+function disableBtn(){
+    answers.forEach(btn => {
+        btn.disabled = true // Disable each button.
+    });
+};
+
+function enableBtn(){
+    answers.forEach(btn => {
+        btn.disabled = false;  // Re-enable each button
+        btn.style.backgroundColor = ''; // Reset color
+        btn.style.color = '';           // Reset text
+    });
+};
+
 function colourAnswerBtn(){
     /* This loops through each button and adds an eventlistener (click). If button has correct answer it is coloured green if not then red. It also creates a next button. */
     answers.forEach(btn => {
@@ -164,7 +178,11 @@ function colourAnswerBtn(){
                 heading.textContent = "Wrong! The right answer is : " + correctAnswer; // Writes the new heading with text.
                 buttom_element.appendChild(heading); // appends the heading to the bottom_element container.
             };
-            btn.style.color = 'black';
+
+            btn.style.color = 'black'; // Prevents the text from turning white after changing question.
+
+            disableBtn()
+
             createBtn();
         });
     });
@@ -178,6 +196,8 @@ function startQuiz() {
     changeQuestion();
     
     colourAnswerBtn();
+
+    enableBtn()
 
 };
 
