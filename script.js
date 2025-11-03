@@ -89,6 +89,8 @@ const answers = document.querySelectorAll(".answer");
 
 let questionNum = 0; // Sets the question number to 0. 
 
+let score = 0;
+
 // Create button function.
 function createBtn() {
 
@@ -107,7 +109,7 @@ function createBtn() {
         if (questionNum >= (questionList.length)) {
             layout_element.innerHTML = ""; // cleans the whole page.
             const heading = document.createElement("h1");
-            heading.textContent = "Congrats! you have finished the Quiz!";
+            heading.textContent = "Congrats! you have finished the Quiz! Your score is : " + score + "/" + questionList.length;
             heading.style.textAlign = "center";
             layout_element.appendChild(heading);
             heading.style.textAlign = "center";
@@ -162,6 +164,7 @@ function colourAnswerBtn(){
             const correctAnswer = questionList[questionNum].answer;
 
             if (selectedAnswer === correctAnswer){
+                score ++; // Increases score number by one.
                 btn.style.backgroundColor = 'green';
                 btn.style.color = 'white'; // Color the text white.
                 // Creates a heading showing if the answer is right.
@@ -179,8 +182,6 @@ function colourAnswerBtn(){
                 buttom_element.appendChild(heading); // appends the heading to the bottom_element container.
             };
 
-            btn.style.color = 'black'; // Prevents the text from turning white after changing question.
-
             disableBtn()
 
             createBtn();
@@ -197,7 +198,7 @@ function startQuiz() {
     
     colourAnswerBtn();
 
-    enableBtn()
+    enableBtn();
 
 };
 
