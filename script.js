@@ -154,41 +154,42 @@ function enableBtn(){
     });
 };
 
-function colourAnswerBtn(){
-    /* This loops through each button and adds an eventlistener (click). If button has correct answer it is coloured green if not then red. It also creates a next button. */
+
+function handleAnswerClick(btn) {
+    const selectedAnswer = btn.textContent;
+    const correctAnswer = questionList[questionNum].answer;
+
+    // Reset bottom area
+    buttom_element.innerHTML = "";
+
+    if (selectedAnswer === correctAnswer) {
+        score ++; // Increases score number by one.
+        btn.style.backgroundColor = 'green';
+        btn.style.color = 'white'; // Color the text white.
+        // Creates a heading showing if the answer is right.
+        buttom_element.innerHTML = ""; // removes all html elements within container.
+        const heading = document.createElement("h3"); // Create a new <h3> element
+        heading.textContent = "Correct!"; // Writes the new heading with text.
+        buttom_element.appendChild(heading); // appends the heading to the bottom_element container.
+    } else {
+        btn.style.backgroundColor = 'red';
+        btn.style.color = 'white'; // Color the text white.
+        // Creates a heading showing if the answer is wrong.
+        buttom_element.innerHTML = ""; // removes all html elements within container.
+        const heading = document.createElement("h3"); // Create a new <h3> element
+        heading.textContent = "Wrong! The right answer is : " + correctAnswer; // Writes the new heading with text.
+        buttom_element.appendChild(heading); // appends the heading to the bottom_element container.
+    }
+
+    disableBtn();
+    createBtn();
+}
+
+function initAnswerListeners(){
     answers.forEach(btn => {
-        btn.addEventListener("click", () => {
-
-            // section can be condensed into a function.
-            const selectedAnswer = btn.textContent;
-            const correctAnswer = questionList[questionNum].answer;
-
-            if (selectedAnswer === correctAnswer){
-                score ++; // Increases score number by one.
-                btn.style.backgroundColor = 'green';
-                btn.style.color = 'white'; // Color the text white.
-                // Creates a heading showing if the answer is right.
-                buttom_element.innerHTML = ""; // removes all html elements within container.
-                const heading = document.createElement("h3"); // Create a new <h3> element
-                heading.textContent = "Correct!"; // Writes the new heading with text.
-                buttom_element.appendChild(heading); // appends the heading to the bottom_element container.
-            } else {
-                btn.style.backgroundColor = 'red';
-                btn.style.color = 'white'; // Color the text white.
-                // Creates a heading showing if the answer is wrong.
-                buttom_element.innerHTML = ""; // removes all html elements within container.
-                const heading = document.createElement("h3"); // Create a new <h3> element
-                heading.textContent = "Wrong! The right answer is : " + correctAnswer; // Writes the new heading with text.
-                buttom_element.appendChild(heading); // appends the heading to the bottom_element container.
-            };
-
-            disableBtn()
-
-            createBtn();
-        });
+        btn.addEventListener("click", () => handleAnswerClick(btn));
     });
-};
-
+}
 
 // This function starts the quiz. 
 function startQuiz() { 
@@ -196,7 +197,7 @@ function startQuiz() {
     // Changes the context of question and answers. 
     changeQuestion();
     
-    colourAnswerBtn();
+    initAnswerListeners();
 
     enableBtn();
 
