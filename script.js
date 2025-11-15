@@ -187,7 +187,7 @@ function handleAnswerClick(btn) {
 
 function initAnswerListeners(){
     answers.forEach(btn => {
-        btn.addEventListener("click", () => handleAnswerClick(btn));
+        btn.onclick = () => handleAnswerClick(btn); // replaces addEventListener
     });
 }
 
