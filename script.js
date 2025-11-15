@@ -108,12 +108,16 @@ function createBtn() {
 
         if (questionNum >= (questionList.length)) {
             layout_element.innerHTML = ""; // cleans the whole page.
+
+            // Centers the text at the center of the page.
+            layout_element.style.display = 'flex';
+            layout_element.style.justifyContent = 'center';
+            layout_element.style.alignItems = 'center';
+
             const heading = document.createElement("h1");
             heading.textContent = "Congrats! you have finished the Quiz! Your score is : " + score + "/" + questionList.length;
             heading.style.textAlign = "center";
             layout_element.appendChild(heading);
-            heading.style.textAlign = "center";
-            heading.style.color = "blue";
         };
 
         // removes colour from all btns.
