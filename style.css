@@ -109,6 +109,7 @@ body {
   }
 
   #answer_section {
+    display: grid;
     grid-area: unset;
     margin: 0;
     grid-template-columns: 1fr;
