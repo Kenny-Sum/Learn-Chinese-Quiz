@@ -87,3 +87,49 @@ body {
 }
 
 /*grid-area: row-start / column-start / row-end / column-end; */
+
+/* ============ MOBILE VIEW ============ */
+@media (max-width: 480px) {
+
+  #layout {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    max-width: 100%;
+    min-height: 100vh;
+  }
+
+  #question_section {
+    grid-area: unset;
+    margin: 0;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.4rem;
+  }
+
+  #answer_section {
+    grid-area: unset;
+    margin: 0;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  #answer_section button {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  #bottom_section {
+    grid-area: unset;
+    margin: 0;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  #nextBtn {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+  }
+}
