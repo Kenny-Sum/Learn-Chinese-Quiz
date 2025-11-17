@@ -25,8 +25,11 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    height: 44rem;
-    width: 64rem;
+
+    width: 100%;
+    max-width: 64rem; /* keep your desktop size as a max */
+    height: auto;
+    min-height: 100vh; /* full height on mobile */
     border-radius: 0.8rem;
 }
 
