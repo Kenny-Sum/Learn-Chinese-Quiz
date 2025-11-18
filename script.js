@@ -1,7 +1,5 @@
 import { questionList } from './question.js';
 
-console.log(questionList);
-
 const layout_element = document.getElementById("layout");
 
 // Create a buttom element linking to bottom section ID.
