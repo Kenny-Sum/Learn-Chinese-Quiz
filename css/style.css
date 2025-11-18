@@ -70,5 +70,26 @@ body {
     min-height: 100vh;
   }
 
+  #button_section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.button {
+  height: 5rem;
+  width: 20rem;
+  border-radius: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  background-color: rgb(190, 255, 251);
+}
+
   
 }
