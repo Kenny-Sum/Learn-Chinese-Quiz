@@ -44,6 +44,8 @@ body {
   height: 5rem;
   width: 30rem;
   border-radius: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .button:hover {
