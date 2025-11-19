@@ -43,5 +43,60 @@ export const questionList = [
     question: "你住那个___？",
     options: ["你", "国", "房间", "是"],
     answer: "房间"
+  },
+  {
+    question: "你住那个___？",
+    options: ["你", "国", "房间", "是"],
+    answer: "房间"
+  },
+  {
+    question: "What is the capital of France?",
+    options: ["London", "Paris", "Berlin", "Rome"],
+    answer: "Paris"
+  },
+  {
+    question: "Which planet is known as the Red Planet?",
+    options: ["Mars", "Earth", "Jupiter", "Venus"],
+    answer: "Mars"
+  },
+  {
+    question: "What is 5 + 3?",
+    options: ["5", "8", "10", "15"],
+    answer: "8"
+  },
+  {
+    question: "Which animal says 'meow'?",
+    options: ["Dog", "Cat", "Cow", "Sheep"],
+    answer: "Cat"
+  },
+  {
+    question: "What color is the sky on a clear day?",
+    options: ["Blue", "Green", "Red", "Yellow"],
+    answer: "Blue"
+  },
+  {
+    question: "Which fruit is typically yellow?",
+    options: ["Apple", "Banana", "Grapes", "Orange"],
+    answer: "Banana"
+  },
+  {
+    question: "What is the opposite of 'hot'?",
+    options: ["Warm", "Cold", "Boiling", "Fire"],
+    answer: "Cold"
+  },
+  {
+    question: "Which shape has three sides?",
+    options: ["Circle", "Triangle", "Square", "Rectangle"],
+    answer: "Triangle"
+  },
+  {
+    question: "Which season comes after spring?",
+    options: ["Summer", "Winter", "Autumn", "Monsoon"],
+    answer: "Summer"
+  },
+  {
+    question: "How many hours are there in a day?",
+    options: ["12", "24", "30", "48"],
+    answer: "24"
   }
 ];
