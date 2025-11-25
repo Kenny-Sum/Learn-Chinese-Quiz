@@ -27,6 +27,20 @@ let questionNum = 0; // Sets the question number to 0.
 
 let score = 0;
 
+let newQuestionArray = [];
+
+function randomiseQuestions(){
+    console.log(questionList);
+    console.log(questionList[0]);
+    console.log(questionList.length);
+
+    for (let i = 0; i < 10; i++){
+        const randomIndex = Math.floor(Math.random() * questionList.length); // Randomly choice a number between 0 and length of array.
+        newQuestionArray.push(questionList[randomIndex]); // Selected question number gets inserted into a new list. 
+        questionList.splice(randomIndex, 1); // remove question from initial array so it does not get repeated added to new array.
+    };
+};
+
 // Create button function.
 function createBtn() {
 
@@ -133,6 +147,8 @@ function initAnswerListeners(){
 
 // This function starts the quiz. 
 function startQuiz() { 
+
+    // randomiseQuestions();
 
     // Changes the context of question and answers. 
     changeQuestion();
